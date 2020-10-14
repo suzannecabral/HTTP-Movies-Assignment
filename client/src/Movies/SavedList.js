@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 function SavedList({ list }) {
   return (
-    <div className="saved-list">
+    <div className="saved-list card">
       <h3>Saved Movies:</h3>
       {list.map(movie => {
         return (
@@ -16,7 +16,7 @@ function SavedList({ list }) {
           </NavLink>
         );
       })}
-      <div className="home-button">
+      <div className="home-button button">
         <Link to="/">Home</Link>
       </div>
     </div>

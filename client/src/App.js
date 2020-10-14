@@ -11,9 +11,10 @@ import axios from 'axios';
 // rgba(213, 0, 0, 1)
 // icon: fa film
 
-//primary: 
-//light: 
-//dark: 
+//primary: d50000
+//light: ff5131
+//dark: 9b0000
+
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -36,15 +37,24 @@ const App = () => {
 
   return (
     <>
-      <SavedList list={savedList} />
+      <header>
+        <h1>Lambda Movie Selector</h1>
+        <nav>
+          <div>
+          </div>
+        </nav>
+      </header>
+      <div className="contentWrapper">
+        <SavedList list={savedList} />
 
-      <Route exact path="/">
-        <MovieList movies={movieList} />
-      </Route>
+        <Route exact path="/">
+          <MovieList movies={movieList} />
+        </Route>
 
-      <Route path="/movies/:id">
-        <Movie addToSavedList={addToSavedList} />
-      </Route>
+        <Route path="/movies/:id">
+          <Movie addToSavedList={addToSavedList} />
+        </Route>
+      </div>
     </>
   );
 };
