@@ -6,16 +6,6 @@ import Movie from "./Movies/Movie";
 import axios from 'axios';
 
 
-// custom styling:
-// material colors: Red A 700
-// rgba(213, 0, 0, 1)
-// icon: fa film
-
-//primary: d50000
-//light: ff5131
-//dark: 9b0000
-
-
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movieList, setMovieList] = useState([]);
