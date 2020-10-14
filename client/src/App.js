@@ -5,6 +5,7 @@ import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import axios from 'axios';
 
+
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movieList, setMovieList] = useState([]);
@@ -26,15 +27,24 @@ const App = () => {
 
   return (
     <>
-      <SavedList list={savedList} />
+      <header>
+        <h1>Lambda Movie Selector</h1>
+        <nav>
+          <div>
+          </div>
+        </nav>
+      </header>
+      <div className="contentWrapper">
+        <SavedList list={savedList} />
 
-      <Route exact path="/">
-        <MovieList movies={movieList} />
-      </Route>
+        <Route exact path="/">
+          <MovieList movies={movieList} />
+        </Route>
 
-      <Route path="/movies/:id">
-        <Movie addToSavedList={addToSavedList} />
-      </Route>
+        <Route path="/movies/:id">
+          <Movie addToSavedList={addToSavedList} />
+        </Route>
+      </div>
     </>
   );
 };
